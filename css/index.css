@@ -1,0 +1,26 @@
+body{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.game_pane{
+  width: 100%;
+  height:100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.game_pane .prize{
+  width: 28%;
+  padding: 12% 5px;
+  border: solid 1px #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color:#000;
+  background-color: #fff;
+}
+.game_pane .prize.active{
+  background-color: pink;
+}
