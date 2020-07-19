@@ -15,7 +15,7 @@ class Game{
     this.prize = options.prize
     this.timer = false
     this.circus = options.circus?options.circus:56 //定制转的圈数，8的整数倍
-    this.game_pane = util.generateTemplate(this.defaultPrize,this.prize)
+    this.game_pane = util.generateTemplate(this.defaultPrize,this.prize)//生成转盘
     this.initStartUI(); // 初始化开始界面
   }
   /**
@@ -35,7 +35,7 @@ class Game{
       return
     }
     this.timer = true
-    let rand =util.getPrize(this.prize)+this.circus
+    let rand = util.getPrize(this.prize)+this.circus //转到随机奖品，需要走几个格子，加上圈数
     let sort = [1,2,3,4,6,7,8,9]
     let doms = dom.getElements('.prize')
     let i = 0
@@ -57,11 +57,11 @@ class Game{
       let speed = parseInt(this.circus/3)
       if(count>speed){
         clearInterval(timer)
-        timer = setInterval(timerOperation,100)
+        timer = setInterval(timerOperation,100) //控制速度，先快
       }
       if(count>this.circus-11){
         clearInterval(timer)
-        timer = setInterval(timerOperation,300)
+        timer = setInterval(timerOperation,300)//控制速度 到达一定圈数慢下来
       }
       if(count === rand){
         let tempFunc = ()=>{

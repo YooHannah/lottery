@@ -35,7 +35,7 @@ export default {
     <div class='prize' data-index='6'>${prizes[4]}</div>`
     return `'<div class="game_pane">${str}</div>'`
   },
-  //计算奖品
+  //计算奖品 转到随机奖品，至少需要走几个格子
   getPrize(prize){
     let rand=parseInt(Math.random()*100)
     let nums =Object.values(prize)
